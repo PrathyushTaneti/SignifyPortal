@@ -1,0 +1,38 @@
+<section class="container-fluid m-0 p-5">
+  <div class="w-100 border-bottom d-flex">
+    <div class="w-100 text-medium text-danger">Performance Table</div>
+    <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-danger" id="dropdownBasic1" ngbDropdownToggle>Filter</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="select(0)">All Records</button>
+        <button ngbDropdownItem (click)="select(1)">C Programming</button>
+        <button ngbDropdownItem (click)="select(2)">C++ Programming</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+   <div class="container d-flex w-100 mt-3">
+    <div class="table table-striped">
+      <thead>
+        <tr>
+          <th class="w-50">Roll Number</th>
+          <th class="w-50">Quiz Name</th>
+          <th class="w-50">Performance(100%)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let performance of performanceList"
+          class="cursor-pointer"
+        >
+          <td>{{ performance.rollNumber }}</td> 
+          <td>{{ performance.quizName }}</td>
+          <td>{{ performance.performanceOfStudent }}</td>
+        </tr>
+      </tbody>
+    </div>
+  </div>
+</section>

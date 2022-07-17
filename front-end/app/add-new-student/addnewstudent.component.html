@@ -1,0 +1,87 @@
+<section class="w-100 p-5 d-flex align-items-center flex-column">
+  <div class="text-medium px-5 py-3 border bg-blue w-50 rounded-top w-100">
+    ADD NEW STUDENT DETAIL
+  </div>
+  <form
+    autocomplete="off"
+    [formGroup]="addNewStudentDetailsForm"
+    class="p-5 shadow border rounded-bottom w-100"
+  >
+    <div class="form-group">
+      <label for="fname">First Name</label>
+      <input type="text" class="form-control" formControlName="firstName" />
+    </div>
+    <div class="form-group">
+      <label for="lname">Last Name</label>
+      <input type="text" class="form-control" formControlName="lastName" />
+    </div>
+    <div class="form-group">
+      <label for="rnumber">Mobile Number</label>
+      <input type="text" class="form-control" formControlName="mobileNumber" />
+    </div>
+    <!-- <div class="form-group">
+      <label for="rnumber">Gender</label>
+      <input type="text" class="form-control" formControlName="gender" />
+    </div> -->
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select class="form-control" formControlName="gender">
+        <option value="M" selected>Male</option>
+        <option value="F">Female</option>
+      </select>
+    </div>
+    <!-- <div class="form-group">
+      <label for="rnumber">Course</label>
+      <input type="text" class="form-control" formControlName="course" />
+    </div> -->
+    <div class="form-group">
+      <label for="course">Course</label>
+      <select class="form-control" formControlName="course">
+        <option value="AI & ML" selected>AI & ML</option>
+        <option value="Datascience">Datascience</option>
+        <option value="Cybersecurity">Cybersecurity</option>
+      </select>
+    </div> 
+    <!-- <div class="form-group">
+      <label for="rnumber">Department</label>
+      <input type="text" class="form-control" formControlName="department" />
+    </div> -->
+    <div class="form-group">
+      <label for="department">Department</label>
+      <select class="form-control" formControlName="department">
+        <option value="CSE" selected>CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="EIE">EIE</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="rnumber">Roll Number</label>
+      <input type="text" class="form-control" formControlName="rollNumber" />
+    </div>
+    <div class="form-group">
+      <label for="fname">Guardian Name</label>
+      <input type="text" class="form-control" formControlName="guardianName" />
+    </div>
+    <div class="form-group">
+      <label for="password">Address</label>
+      <input type="text" class="form-control" formControlName="address" />
+    </div>
+    <div class="mt-4 d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary" (click)="addNewDetail()">
+        ADD
+      </button>
+      <button type="" class="btn btn-danger" (click)="goBack()">CANCEL</button>
+    </div>
+  </form>
+</section>
+
+<!-- address: "Lig-6, BHEL"
+course: "AI and ML"
+department: "CSE"
+firstName: "Prathyush"
+gender: "M"
+guardianName: "Sudhakar"
+id: 1
+lastName: "Taneti"
+mobileNumber: "9493119495"
+rollNumber: "18BD1A05DN" -->

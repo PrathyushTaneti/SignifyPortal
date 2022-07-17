@@ -1,0 +1,45 @@
+<section
+    class="mt-5 w-100 d-flex flex-column align-items-center justify-content-center mb-6"
+  >
+    <div class="container d-flex justify-content-between p-2">
+      <span class="text-medium d-flex font-weight-bold">EMPLOYEE DETAILS</span>
+      <button class="btn btn-success d-flex align-items-center">
+        <span class="material-icons me-2">add_circle</span>
+        Add New Detail
+      </button>
+    </div>
+    <div class="d-flex">
+      <div class="table table-striped">
+        <thead>
+          <tr>
+            <th>Employee ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>EmailAddress</th>
+            <!-- <th>Gender</th> -->
+            <th>MobileNumber</th>
+            <th>Subject</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of allEmployeeDetails | async">
+            <td>{{ "ID-NO. " + employee.id }}</td>
+            <td>{{ employee.firstName }}</td>
+            <td>{{ employee.lastName }}</td>
+            <td>{{ employee.emailAddress }}</td>
+            <!-- <td>{{ employee.gender }}</td> -->
+            <td>{{ employee.mobileNumber }}</td>
+            <td>{{ employee.subject }}</td>
+            <td>
+              <button class="btn btn-warning">EDIT</button>
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">DELETE</button>
+            </td>
+          </tr>
+        </tbody>
+      </div>
+    </div>
+  </section>

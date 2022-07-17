@@ -1,0 +1,52 @@
+<div
+  class="container-fluid m-3 d-flex align-items-center justify-content-center"
+>
+  <div class="w-75 border pb-5 shadow mt-5 rounded" *ngIf="isStudentPresent">
+    <div class="text-large border-bottom mb-3 bg-blue text-center">
+      Student Profile
+    </div>
+    <div class="d-flex px-5 justify-content-center">
+      <img
+        src="../../assets/images/propic.png"
+        class="img-thumbnail w-25 rounded mb-3"
+      />
+     <div class="px-5">
+       <div class="text-small">
+        <span class="font-weight-bold">First Name : </span>
+        {{ studentDetail.firstName }}
+      </div>
+      <div class="text-small">
+        <span class="font-weight-bold">Last Name :</span>
+        {{  studentDetail.lastName }}
+      </div>
+      <div class="text-small">
+        <span class="font-weight-bold">Gender :</span>
+        {{  studentDetail.gender }}</div>
+      <div class="text-small">
+        <span class="font-weight-bold">Roll Number :</span>
+        {{ studentDetail.rollNumber }}
+      </div>
+      <div class="text-small">
+        <span class="font-weight-bold">Course : </span>
+        {{ studentDetail.course }}</div>
+      <div class="text-small">
+        <span class="font-weight-bold">Department : </span>
+        {{ "" + studentDetail.department }}
+      </div>
+      <div class="d-flex justify-content-between w-100 mt-3">
+        <button class="btn btn-warning d-flex align-items-center">
+          <span class="material-icons me-1">edit</span>
+          EDIT
+        </button>
+        <button
+          class="btn btn-danger d-flex align-items-center text-dark"
+          (click)="deleteStudentContact(studentDetail.id)"
+        >
+          <span class="material-icons me-1">delete</span>
+          DELETE
+        </button>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>

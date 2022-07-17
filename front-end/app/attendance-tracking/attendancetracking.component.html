@@ -1,0 +1,24 @@
+<section class="container-fluid m-0 p-5">
+  <div class="text-large border-bottom font-weight-bold w-100">
+    Attendance Tracking
+  </div>
+
+  <div class="w-50">
+    <div class="text-medium border-bottom font-weight-bold w-100 mx-5 mt-5">
+      STUDENTS RECORD
+    </div>
+    <div *ngFor="let attendance of allStudentDetails" class="mt-3">
+        <div class="font-weight-bold px-5 text-success"> {{ attendance.identity }} </div>
+    </div>
+  </div>
+
+  <div class="w-50">
+    <div class="text-medium border-bottom font-weight-bold w-100 mx-5 mt-5">
+      EMPLOYEES RECORD
+    </div>
+    <div *ngFor="let attendance of allTeacherDetails" class="mt-3">
+        <div class="font-weight-bold px-5 text-success"> {{ attendance.identity }} </div>
+    </div>
+  </div>
+
+</section>

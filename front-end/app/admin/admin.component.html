@@ -1,0 +1,85 @@
+<section class="container-fluid w-100 m-0 p-0 d-flex">
+
+  <section class="w-25 bg-primary d-flex flex-column text-black p-2 rounded">
+
+    <div class="px-5 py-1 my-4 hover-admin">
+      <span class="cursor-pointer d-flex align-items-start" routerLink="/admin">
+        <span class="material-icons me-1">dashboard</span>DASHBOARD</span>
+    </div>
+
+    <div class="d-flex px-5 py-1 my-4 hover-admin">
+      <span class="cursor-pointer d-flex align-items-start">
+        <span class="material-icons me-1"> forum </span> MESSAGES</span>
+    </div>
+
+    <div class="d-flex px-5 py-1 my-4 hover-admin" routerLink="/admin/tracker">
+      <span class="cursor-pointer d-flex align-items-start" >
+        <span class="material-icons me-1">insights</span> ATTENDANCE TRACKER</span>
+    </div>
+
+    <div class="d-flex px-5 py-1 my-4 hover-admin" routerLink="/admin/studentdetails">
+      <span class="cursor-pointer d-flex align-items-start">
+        <span class="material-icons me-1"> manage_accounts </span> STUDENT DETAILS</span>
+    </div>
+
+    <div class="d-flex px-5 py-1 my-4 hover-admin" routerLink="/admin/employeedetails">
+      <span class="cursor-pointer d-flex align-items-start">
+        <span class="material-icons me-1"> manage_accounts</span> EMPLOYEE DETAILS</span>
+    </div>
+
+    <div class="d-flex px-5 py-1 my-4 hover-admin" routerLink="/admin/addnewstudent">
+      <span class="cursor-pointer d-flex align-items-start">
+        <span class="material-icons me-1"> add_circle</span> ADD STUDENT</span>
+    </div>
+
+    <div class="d-flex px-5 py-1 my-4 hover-admin">
+      <span class="cursor-pointer d-flex align-items-start">
+        <span class="material-icons me-1"> add_circle </span> ADD EMPLOYEE</span>
+    </div>
+
+    <div class="d-flex px-5 py-1 my-4 hover-admin" routerLink="/admin/activePrograms">
+      <span class="cursor-pointer d-flex align-items-start">
+        <span class="material-icons me-1"> add_circle </span> ACTIVE ASSIGNMENTS</span>
+    </div>
+
+    <div class="d-flex px-5 py-1 my-4 hover-admin" routerLink="/admin/schedulemeeting">
+      <span class="cursor-pointer d-flex align-items-start">
+        <span class="material-icons me-1"> event_available </span> SCHEDULE MEETING</span>
+    </div>
+
+     <div class="d-flex px-5 py-1 my-4 hover-admin" routerLink="/login">
+      <span class="cursor-pointer d-flex align-items-start">
+        <span class="material-icons me-1"> logout </span> LOGOUT</span>
+    </div>
+    
+  </section>
+
+  <section
+  class="container-fluid m-0 w-75">
+    <router-outlet ></router-outlet>
+  </section>
+</section>
+
+<!-- address: "Lig-6, BHEL"
+course: "AI and ML"
+department: "CSE"
+firstName: "Prathyush"
+gender: "M"
+guardianName: "Sudhakar"
+id: 1
+lastName: "Taneti"
+mobileNumber: "9493119495"
+rollNumber: "18BD1A05DN" -->
+
+<!-- department: "CSE"
+emailAddress: "bilhari@gmail.com"
+firstName: "Bilhari"
+gender: "M"
+id: 1
+lastName: "ALK"
+mobileNumber: "9553119495"
+subject: "C++" -->
+
+
+ <!-- #o="outlet"
+  [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''" -->

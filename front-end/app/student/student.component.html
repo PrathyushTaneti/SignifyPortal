@@ -1,0 +1,117 @@
+<div class="container-fluid p-0 m-0">
+  <div class="d-flex w-100">
+    <section
+      class="w-25 bg-primary d-flex flex-column text-black p-5 justify-content-start"
+    >
+      <div class="d-flex my-5 cursor-pointer">
+        <span class="material-icons me-1">dashboard</span>
+        <span> DASHBOARD</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer" (click)="redirectToQuiz()">
+        <span class="material-icons me-1"> quiz </span>
+        <span> ACTIVE QUIZS</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer">
+        <span class="material-icons me-1">notifications</span>
+        <span> NOTIFICATIONS</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer" (click)="showPerformance()">
+        <span class="material-icons me-1">edit_note</span>
+        <span> PERFORMANCE</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer">
+        <span class="material-icons me-1">comment</span>
+        <span> REVIEWS</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer" (click)="goToHome()">
+        <span class="material-icons me-1">logout</span>
+        <span> LOGOUT</span>
+      </div>
+    </section>
+
+    <section class="w-75">
+      <section class="w-100 p-5">
+        <div
+          class="header d-flex justify-content-between w-75 border-bottom p-2"
+        >
+          <h1 class="">
+            <span class="material-icons text-success">adjust</span>
+            Active Classes
+          </h1>
+          <div>
+            <button class="btn btn-primary py-1" (click)="checkActiveClasses()">
+              Refresh
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-1 p-2">
+          <div
+            *ngFor="let meeting of activeMeetings"
+            (click)="selectedClass(meeting.joinLink)"
+          >
+            <div class="w-75 rounded m-5 p-5 shadow border">
+              <h2 class="mb-3">{{ "Class : " + meeting.subject }}</h2>
+              <button class="btn btn-primary">Join</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-100 p-5">
+        <div
+          class="header d-flex justify-content-between w-75 border-bottom p-2"
+        >
+          <h1 class="">
+            <span class="material-icons text-success">adjust</span>
+            Active Programs
+          </h1>
+          <div>
+            <button class="btn btn-primary py-1" (click)="checkActiveClasses()">
+              Refresh
+            </button>
+          </div>
+        </div>
+        <div class="mt-2 p-2">
+          <div
+            *ngFor="let program of activePrograms"
+            (click)="selectedProgram(program.programLink)"
+          >
+            <div class="w-75 rounded m-5 p-5 shadow border">
+              <h2 class="mb-3">{{ "Program : " + program.programName }}</h2>
+              <button class="btn btn-primary">Solve</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid m-0 p-5 w-75" *ngIf="showPerformanceList">
+        <div class="w-100 border-bottom text-medium text-danger">Performance </div>
+        <div class="container d-flex w-100 mt-3 ms-5">
+          <div class="table table-striped">
+            <thead>
+              <tr>
+                <th class="w-50">Roll Number</th>
+                <th class="w-50">Quiz Name</th>
+                <th class="w-50">Performance(100%)</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr
+                *ngFor="let performance of individialPerformance"
+                class="cursor-pointer"
+              >
+                <td>{{ performance.rollNumber }}</td>
+                <td>{{ performance.quizName }}</td>
+                <td>{{ performance.performanceOfStudent }}</td>
+              </tr>
+            </tbody>
+          </div>
+        </div>
+      </section>
+
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+</div>

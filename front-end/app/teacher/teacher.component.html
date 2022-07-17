@@ -1,0 +1,53 @@
+<div class="container-fluid p-0 m-0">
+  <div class="d-flex w-100">
+    <section class="w-25 bg-primary d-flex flex-column text-black p-5 justify-content-center">
+      <div class="d-flex my-5 cursor-pointer">
+        <span class="material-icons">dashboard</span>
+        <span> DASHBOARD</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer">
+        <span class="material-icons">notifications</span>
+        <span> NOTIFICATIONS</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer" routerLink="/teacher/performance">
+        <span class="material-icons">edit_note</span>
+        <span> PERFORMANCE TABLE</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer">
+        <span class="material-icons">edit</span>
+        <span> REMARKS</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer">
+        <span class="material-icons">comment</span>
+        <span> REVIEWS</span>
+      </div>
+      <div class="d-flex my-5 cursor-pointer" (click)="goToHome()">
+        <span class="material-icons">logout</span>
+        <span> LOGOUT</span>
+      </div>
+    </section>
+
+    <section class="w-75 p-5">
+      <div class="header d-flex justify-content-between w-75 border-bottom p-2">
+        <h1 class="">
+          <span class="material-icons text-success">adjust</span>
+          Active Classes</h1>
+        <div>
+          <button class="btn btn-primary py-1" (click)="checkActiveClasses()">Refresh</button>
+        </div>
+      </div>     
+      <div class="mt-5 p-2">
+        <div *ngFor="let meeting of activeMeetings | async" (click)="selectedClass(meeting.joinLink)">
+          <div class="w-75 rounded m-5 p-5 shadow border">
+            <h2 class="mb-3"> {{ "Class : "+ meeting.subject}}  </h2>
+            <button class="btn btn-primary">Join</button>
+          </div>
+        </div>
+      </div> 
+
+      <div class="w-75 mt-5">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </div>
+</div>

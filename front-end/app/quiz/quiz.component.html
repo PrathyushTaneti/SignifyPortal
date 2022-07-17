@@ -1,0 +1,54 @@
+<section class="container-fluid m-0">
+  <div class="w-75 p-5" *ngIf="hideForm">
+    <div class="w-100 text-medium font-weight-bold border-bottom mb-4">
+      QUIZ
+    </div>
+    <form class="ps-5" [formGroup]="quizForm">
+      <div class="form-group mb-4">
+        <label for=""
+          >1. Array Elements are always stored in which memory locations ?</label
+        ><br />
+        <label class="mx-3">A. Continuous</label><br />
+        <label class="mx-3">B. Non-Continuous</label>
+        <input type="email" class="form-control mx-3" placeholder="Enter Your Option Here" formControlName="questionOne"/>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for=""
+          >2. In C, if you pass an array as an argument to a function, what
+          actually gets passed?</label
+        ><br />
+        <label class="mx-3">A. Base Address Of The Array</label><br />
+        <label class="mx-3">B. Values Of The Array</label><br />
+        <label class="mx-3">C. Address Of Last Element Of The Array</label><br />
+        <input type="email" class="form-control mx-3" placeholder="Enter Your Option Here" formControlName="questionTwo"/>
+      </div>
+      <div class="form-group mb-4">
+        <label for=""
+          >3. What will happen if in a C program you assign a value to an array
+          element whose subscript exceeds the size of array?</label
+        ><br />
+        <label class="mx-3">A. The element will be set to 0.</label><br />
+        <label class="mx-3">B. The compiler would report an error.</label><br />
+        <label class="mx-3">C. The program may crash if some important data gets overwritten.</label><br />
+        <input type="email" class="form-control mx-3" placeholder="Enter Your Option Here" formControlName="questionThree"/>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="evaluateQuiz()">
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <div class="w-75 p-5" *ngIf="showResult">
+    <div class="w-100 border-bottom text-medium font-weight-bold text-danger">
+      PERFORMANCE
+    </div>
+    <div class="w-25 ps-5 pt-5 pb-5 text-medium text-danger">
+      {{ result+"%" }}
+    </div>
+  </div>
+</section>
+
+<!-- formControlName="questionOne" -->
+<!-- formControlName="questionThree"
+          formControlName="questionTwo" -->

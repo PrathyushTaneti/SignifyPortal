@@ -1,0 +1,48 @@
+<section
+  class="mt-5 w-100 d-flex flex-column align-items-center justify-content-center mb-3"
+>
+  <div class="container d-flex justify-content-between p-2 w-75">
+    <span class="text-medium d-flex font-weight-bold justify-content-start"
+      >STUDENT DETAILS</span
+    >
+    <button
+      class="btn btn-success d-flex align-items-center"
+      (click)="addNewStudent()"
+    >
+      <span class="material-icons me-2">add_circle</span>
+      Add New Detail
+    </button>
+  </div>
+
+  <div class="container d-flex w-75">
+    <div class="table table-striped">
+      <thead>
+        <tr>
+          <th>AdmissionNumber</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>MobileNumber</th>
+          <th>Course</th>
+          <th>DEPARTMENT</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let student of allStudentDetails | async"
+          (click)="seletedStudent(student.id, student.firstName)"
+          class="cursor-pointer"
+        >
+          <td>{{ student.rollNumber }}</td>
+          <td>{{ student.firstName }}</td>
+          <td>{{ student.lastName }}</td>
+          <td>{{ student.mobileNumber }}</td>
+          <td>{{ student.course }}</td>
+          <td>{{ student.department }}</td>
+          <td> <button class="btn btn-primary">SELECT</button> </td>
+        </tr>
+      </tbody>
+    </div>
+  </div>
+</section>

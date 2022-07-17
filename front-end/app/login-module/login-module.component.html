@@ -1,0 +1,60 @@
+<section class="d-flex justify-content-center p-5">
+  <div class="m-5 w-50 border shadow rounded">
+    <div class="bg-blue m-0 p-2 rounded text-light d-flex align-items-center" data-aos="fade-down">
+      <div class="text-medium font-weight-bold me-1" data-aos="fade-in">SIGNIFY</div>
+      <div>Login</div>
+    </div>
+
+    <form autocomplete="off" [formGroup]="loginDetailsForm" class="p-5">
+      <div class="form-group mt-3" data-aos="zoom-in">
+        <label for="emailAddress" class="font-weight-bold">UserName</label>
+        <input
+          type="email"
+          class="form-control border w-100 p-1"
+          formControlName="emailAddress"
+        />
+        <span
+          class="text-danger"
+          *ngIf="emailAddress && emailAddress.invalid && emailAddress.touched"
+          >This Input Feild Is Invalid</span
+        >
+      </div>
+
+      <div class="form-group mt-3" data-aos="zoom-in">
+        <label for="password" class="font-weight-bold">Password</label>
+        <input
+          type="password"
+          class="form-control border w-100 p-1"
+          formControlName="password"
+        />
+        <span
+          class="text-danger"
+          *ngIf="password && password.invalid && password.touched"
+          >This Input Feild Is Invalid</span
+        >
+      </div>
+
+      <div class="mt-4 d-flex justify-content-between" data-aos="zoom-out">
+        <button
+          type="reset"
+          class="btn btn-danger py-1 px-2 d-flex align-items-center"
+          (click)="goToHomePage()"
+        >
+          Cancel
+          <span class="material-icons ms-2"> close </span>
+        </button>
+        <button
+          class="btn btn-success px-3 py-1 me-9 d-flex align-items-center"
+          (click)="login()"
+        >
+          Login
+          <span class="material-icons ms-2"> login </span>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+
+
