@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Signify.Models
 {
-    internal class Attendance
+    public class Attendance
     {
         public int Id { get; set; }
 
