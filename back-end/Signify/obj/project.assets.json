@@ -466,11 +466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\BRUCE\\.NET\\SIGNIFY-PORTAL\\back-end\\Signify\\Signify.csproj",
+      "projectUniqueName": "D:\\BRUCE\\Applications\\SignifyPortal\\back-end\\Signify\\Signify.csproj",
       "projectName": "Signify",
-      "projectPath": "F:\\BRUCE\\.NET\\SIGNIFY-PORTAL\\back-end\\Signify\\Signify.csproj",
+      "projectPath": "D:\\BRUCE\\Applications\\SignifyPortal\\back-end\\Signify\\Signify.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "F:\\BRUCE\\.NET\\SIGNIFY-PORTAL\\back-end\\Signify\\obj\\",
+      "outputPath": "D:\\BRUCE\\Applications\\SignifyPortal\\back-end\\Signify\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -485,7 +485,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -532,7 +531,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

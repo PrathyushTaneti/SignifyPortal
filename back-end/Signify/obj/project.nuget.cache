@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dXMtbylZx4SnEDYFlhiWals2RgDIB096tvH+bATjOs/JuUuv48MtEyXxf8TIJQkONRDLS+39scqy44uIGFqCog==",
+  "dgSpecHash": "OfawfYhWrZghAXUB+Cp5YAj8FQ9OePjbSF5smqeOGYJvjxnzydOvucNPmI35EqoDLF4k/2Wl08zpCTLvJc0UhA==",
   "success": true,
-  "projectFilePath": "F:\\BRUCE\\.NET\\SIGNIFY-PORTAL\\back-end\\Signify\\Signify.csproj",
+  "projectFilePath": "D:\\BRUCE\\Applications\\SignifyPortal\\back-end\\Signify\\Signify.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
