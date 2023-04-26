@@ -1,3 +1,3 @@
-# Signify-Portal
+# Signify Portal
 
 ## Author : Prathyush Taneti
