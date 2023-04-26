@@ -17,7 +17,7 @@
         public string EmailAddress { get; set; } = string.Empty;
 
         [Required]
-        [MinLength(10, ErrorMessage = "User Name Should Be In 10 to 20 Characters")]
+        [MinLength(6, ErrorMessage = "User Name Should Be In 10 to 20 Characters")]
         [MaxLength(20, ErrorMessage = "User Name Should Be In 10 to 20 Characters")]
         public string UserName { get; set; } = string.Empty;
 
@@ -26,6 +26,6 @@
         public string Password { get; set; } = string.Empty;
 
         [Required]
-        public DateTime DateCreated { get; private set; }
+        public DateTime DateCreated { get; set; }
     }
 }

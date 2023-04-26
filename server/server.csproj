@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="automapper" Version="12.0.1" />
+    <PackageReference Include="automapper.extensions.microsoft.dependencyinjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
     <PackageReference Include="microsoft.entityframeworkcore" Version="7.0.5" />
     <PackageReference Include="microsoft.entityframeworkcore.design" Version="7.0.5">
@@ -19,6 +20,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 

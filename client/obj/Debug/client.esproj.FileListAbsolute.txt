@@ -1,0 +1,2 @@
+D:\BRUCE\Applications\SignifyPortal\client\obj\Debug\client.esproj.SuggestedBindingRedirects.cache
+D:\BRUCE\Applications\SignifyPortal\client\obj\Debug\client.esproj.CoreCompileInputs.cache
