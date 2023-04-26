@@ -3,7 +3,7 @@
     public class Attendance
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         public string Date { get; set; } = string.Empty;
