@@ -1,0 +1,10 @@
+<section class="container-fluid">
+    <header class="w-100 d-flex justify-content-center flex-column align-items-center p-5">
+        <h2>Students List</h2>
+        <div *ngFor="let student of students">
+            <h4 class="border rounded shadow p-3">
+                {{ student.firstName }}
+            </h4>
+        </div>
+    </header>
+</section>

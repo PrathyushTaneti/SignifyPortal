@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -16,11 +17,12 @@ export class NavbarComponent {
   isAdmin: boolean = false;
   isStudent: boolean = false;
   isTeacher: boolean = false;
+  invalidLogin!: boolean;
   // adminDetails!: AdminDetails[];
   // studentDetails!: Student[];
   // teacherDetails!: Teacher[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   // constructor(private router: Router, private appService: AppServiceService, private studentService: StudentService, private employeeService: TeacherService, private adminService: AdminService,
   //   private attendanceTracker: AttendanceTrackerService) { }
@@ -48,7 +50,25 @@ export class NavbarComponent {
   }
 
   login() {
-    this.router.navigate(['./admin/1']);
+    if (this.loginDetailsForm.valid) {
+      let userName = this.loginDetailsForm.get("userName")?.value;
+      let password = this.loginDetailsForm.get("password")?.value;
+      window.console.log(userName, password);
+      const credentials = {
+        'userName': userName,
+        'password': password
+      };
+      this.http.post("https://localhost:7100/api/Login/Login", credentials).subscribe(
+        response => {
+          const token = (<any>response).token;
+          localStorage.setItem("jwt", token);
+          this.invalidLogin = false;
+          this.router.navigate(['/admin']);
+        }, err => {
+          this.invalidLogin = true;
+        }
+      );
+    }
   }
 
   // checkEmployee(): void {

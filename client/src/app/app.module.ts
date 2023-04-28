@@ -1,6 +1,8 @@
 // inbuilt components
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 // user made components
 import { AppComponent } from './app.component';
@@ -13,7 +15,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthGuardService } from './auth-guard.service';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
+export function isAuthenticated() {
+  return localStorage.getItem("jwt");
+}
 
 const routes: Routes = [
   {
@@ -37,8 +45,21 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'admin/:id',
-    component: AdminComponent
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuardService],
+    children: [
+      {
+        path: '',
+        redirectTo: 'student-details',
+        pathMatch : 'full'
+      },
+      {
+        path: 'student-details',
+        component: StudentDetailsComponent,
+        canActivate: [AuthGuardService]
+      }
+    ]
   }
 ];
 
@@ -51,7 +72,8 @@ const components = [
 
 @NgModule({
   declarations: [
-    components
+    components,
+    StudentDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +82,16 @@ const components = [
     BrowserAnimationsModule,
     MatSidenavModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: isAuthenticated,
+        allowedDomains: ["localhost:7100"],
+        disallowedRoutes: []
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

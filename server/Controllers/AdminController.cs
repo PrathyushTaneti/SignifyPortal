@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using server.Data;
@@ -13,6 +14,7 @@ namespace server.Controllers
     public class AdminController : ControllerBase
     {
         [HttpGet]
+        [Authorize]
         public ActionResult<List<Admin>> GetAllAdmins([FromServices] DataContext dataContext)
         {
             try
@@ -27,6 +29,7 @@ namespace server.Controllers
 
 
         [HttpPost]
+        [Authorize]
         public Guid CreateNewAdmin([FromBody] Admin admin, [FromServices] DataContext dataContext)
         {
             try
@@ -40,6 +43,13 @@ namespace server.Controllers
             {
                 throw;
             }
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public List<Student> GetStudents([FromServices] DataContext dataContext)
+        {
+            return dataContext.Students.ToList();
         }
     }
 }

@@ -276,3 +276,4 @@ D:\BRUCE\Applications\SignifyPortal\server\obj\Debug\net7.0\refint\server.dll
 D:\BRUCE\Applications\SignifyPortal\server\obj\Debug\net7.0\server.pdb
 D:\BRUCE\Applications\SignifyPortal\server\obj\Debug\net7.0\server.genruntimeconfig.cache
 D:\BRUCE\Applications\SignifyPortal\server\obj\Debug\net7.0\ref\server.dll
+D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
