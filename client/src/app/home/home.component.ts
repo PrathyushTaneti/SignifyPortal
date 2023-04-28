@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+//import AOS from 'aos';
+//import 'aos/dist/aos.css'; 
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class HomeComponent {
   public readingIcon = "../../assets/images/hero-image.svg";
-  public loginForm: FormGroup | undefined;
+  public loginForm!: FormGroup;
 
   constructor(private router: Router) { }
 
@@ -18,6 +20,7 @@ export class HomeComponent {
   }
 
   NgOnInit() {
+    //AOS.init();
     this.buildForm();
   }
 

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'client';
+  public title = 'Signify';
+  public logo = "../assets/images/SIGNIFY-2.png"
 }

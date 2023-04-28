@@ -1,0 +1,105 @@
+<!--------------------- parent container  ------------------------->
+<section class="container-fluid m-0 p-0">
+    <!--------------------- navigation container  ------------------------->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow border">
+        <div class="container-fluid">
+            <img [src]="logo" class="navbar-brand w-25 cursor-pointer" routerLink="home">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="#" class="m-3 px-3 text-decoration-none hover-border font-weight-bold"
+                            routerLink="/home" routerLinkActive="">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="m-3 px-3 text-decoration-none hover-border"
+                            routerLink="/features">FEATURES</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="m-3 px-3 text-decoration-none hover-border"
+                            routerLink="/quotations">QUOTATIONS</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="m-3 px-3 text-decoration-none hover-border" routerLink="/footer">ABOUT US</a>
+                    </li>
+                </ul>
+                <section class="d-flex align-items-center me-5">
+                    <button class="px-4 py-2 btn btn-outline-primary me-4" routerLink="login">
+                        LOGIN
+                    </button>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="px-4 py-2 btn btn-outline-primary me-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        LOGIN
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade shadow" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">SIGN IN</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+
+                                <div class="alert alert-danger m-3" role="alert" *ngIf="userName && userName.invalid && userName.touched">
+                                    UserName Feild Is Invalid
+                                </div>
+
+                                <div class="alert alert-danger m-3" role="alert" *ngIf="password && password.invalid && password.touched">
+                                    Password Feild Is Invalid
+                                </div>
+
+                                <div class="modal-body">
+                                    
+                                    <form autocomplete="off" [formGroup]="loginDetailsForm" class="p-2">
+                                        <div class="form-group mt-3" data-aos="zoom-in">
+                                            <label for="emailAddress" class="font-weight-bold">UserName</label>
+                                            <input type="text" class="form-control border w-100 p-1" formControlName="userName" autofocus/>
+                                        </div>
+                                    
+                                        <div class="form-group mt-3" data-aos="zoom-in">
+                                            <label for="password" class="font-weight-bold">Password</label>
+                                            <input type="password" class="form-control border w-100 p-1" formControlName="password" />
+                                        </div>
+                                    
+                                        <!-- <div class="mt-4 d-flex justify-content-between" data-aos="zoom-out">
+                                            <button type="reset" class="btn btn-danger py-1 px-2 d-flex align-items-center" (click)="goToHomePage()">
+                                                Cancel
+                                                <span class="material-icons ms-2"> close </span>
+                                            </button>
+                                            <button class="btn btn-success px-3 py-1 me-9 d-flex align-items-center" (click)="login()">
+                                                Login
+                                                <span class="material-icons ms-2"> login </span>
+                                            </button>
+                                        </div> -->                                    
+                                    </form>
+
+
+                                </div>
+                                <div class="modal-footer d-flex justify-content-between">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success" (click)="login()">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="px-4 py-2 btn btn-primary">SIGN UP</button>
+                </section>
+            </div>
+        </div>
+    </nav>
+    <!--------------------- body container  ------------------------->
+    <section class="w-100">
+        <router-outlet></router-outlet>
+    </section>
+</section>

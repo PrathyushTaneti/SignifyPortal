@@ -1,6 +1,18 @@
-<form action="/" [formGroup]="loginForm">
-  <div class="form-group">
-    <input type="text" name="name" value="" id="nameText" (onfocusout)="print()" class="form-control m-5" autofocus formControlName="name"/>
-  </div>
+<section class="container-fluid p-3 d-flex justify-content-center align-items-center">
+  <div class="d-flex justify-content-between bg-image p-5 rounded w-100 m-5">
+    <div class="w-50 d-flex flex-column justify-content-center">
+      <div class="text-large mb-4 text-light" data-aos="fade-right" data-aos-duration="1500">
+        Let's Make Learning Fun
+      </div>
+      <div class="text-light" data-aos="fade-right" data-aos-duration="3000">
+        A platform where we offer a space for quality education. We help
+        educator locate an institution, and learner find an educator, for smooth
+        yet effective learning.
+      </div>
+    </div>
 
-</form>
+    <div class="w-50" data-aos="fade-left" data-aos-duration="3000">
+      <img [src]="readingIcon" class="w-100" />
+    </div>
+  </div>
+</section>
