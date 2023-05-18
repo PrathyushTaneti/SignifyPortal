@@ -10,8 +10,14 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent {
+  color : string = "red"
+  red: any;
+  green: any;
+
   public readingIcon = "../../assets/images/hero-image.svg";
   public loginForm!: FormGroup;
+
+
 
   constructor(private router: Router) { }
 
@@ -29,6 +35,10 @@ export class HomeComponent {
     this.loginForm = new FormGroup({
       name: new FormControl('', Validators.required),
     });
+  }
+
+  getUserName() {
+    return "Hello";
   }
 
 }

@@ -8,7 +8,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './admin/admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,7 +16,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AuthGuardService } from './auth-guard.service';
+import { AuthGuardService } from './services/auth-guard.service';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 
 export function isAuthenticated() {
@@ -45,19 +45,19 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'admin',
+    path: 'admin/:id/:name',
     component: AdminComponent,
     canActivate: [AuthGuardService],
     children: [
       {
         path: '',
         redirectTo: 'student-details',
-        pathMatch : 'full'
+        pathMatch: 'full'
       },
       {
         path: 'student-details',
         component: StudentDetailsComponent,
-        canActivate: [AuthGuardService]
+        canActivateChild: [AuthGuardService]
       }
     ]
   }
@@ -91,7 +91,8 @@ const components = [
         allowedDomains: ["localhost:7100"],
         disallowedRoutes: []
       }
-    })
+    }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

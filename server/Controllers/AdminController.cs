@@ -14,7 +14,7 @@ namespace server.Controllers
     public class AdminController : ControllerBase
     {
         [HttpGet]
-        [Authorize]
+       // [Authorize]
         public ActionResult<List<Admin>> GetAllAdmins([FromServices] DataContext dataContext)
         {
             try

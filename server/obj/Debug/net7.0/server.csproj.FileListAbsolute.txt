@@ -10,6 +10,7 @@ D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\AutoMapper.Extension
 D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Azure.Core.dll
 D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Azure.Identity.dll
 D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Humanizer.dll
+D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -276,4 +277,3 @@ D:\BRUCE\Applications\SignifyPortal\server\obj\Debug\net7.0\refint\server.dll
 D:\BRUCE\Applications\SignifyPortal\server\obj\Debug\net7.0\server.pdb
 D:\BRUCE\Applications\SignifyPortal\server\obj\Debug\net7.0\server.genruntimeconfig.cache
 D:\BRUCE\Applications\SignifyPortal\server\obj\Debug\net7.0\ref\server.dll
-D:\BRUCE\Applications\SignifyPortal\server\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

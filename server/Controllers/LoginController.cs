@@ -44,7 +44,6 @@ namespace server.Controllers
                     return Ok(new { Token = tokenString });
                 }
                 return Unauthorized();
-
             }
         }
     }

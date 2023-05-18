@@ -3,7 +3,7 @@
     <!--------------------- navigation container  ------------------------->
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow border">
         <div class="container-fluid">
-            <img [src]="logo" class="navbar-brand w-25 cursor-pointer" routerLink="home">
+            <img [src]="logo" class="navbar-brand w-20 cursor-pointer" routerLink="home">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -30,21 +30,21 @@
                     </li>
                 </ul>
                 <section class="d-flex align-items-center me-5">
-                    <button class="px-4 py-2 btn btn-outline-primary me-4" routerLink="login">
+                    <!-- <button class="px-4 py-2 btn btn-outline-primary me-4" routerLink="login">
                         LOGIN
-                    </button>
+                    </button> -->
 
-                    <!-- Button trigger modal -->
-                    <button type="button" class="px-4 py-2 btn btn-outline-primary me-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        LOGIN
+                    <!-- SIGN IN Button trigger modal -->
+                    <button type="button" class="px-4 py-2 btn btn-outline-primary me-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                        SIGN IN
                     </button>
                     
-                    <!-- Modal -->
-                    <div class="modal fade shadow" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    <!-- Sign In Modal -->
+                    <div class="modal fade shadow" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                         aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header bg-primary">
                                     <h1 class="modal-title fs-5" id="staticBackdropLabel">SIGN IN</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
@@ -71,28 +71,54 @@
                                         <div class="form-group mt-3" data-aos="zoom-in">
                                             <label for="password" class="font-weight-bold">Password</label>
                                             <input type="password" class="form-control border w-100 p-1" formControlName="password" />
-                                        </div>                                    
-                                        <!-- <div class="mt-4 d-flex justify-content-between" data-aos="zoom-out">
-                                            <button type="reset" class="btn btn-danger py-1 px-2 d-flex align-items-center" (click)="goToHomePage()">
-                                                Cancel
-                                                <span class="material-icons ms-2"> close </span>
-                                            </button>
-                                            <button class="btn btn-success px-3 py-1 me-9 d-flex align-items-center" (click)="login()">
-                                                Login
-                                                <span class="material-icons ms-2"> login </span>
-                                            </button>
-                                        </div> -->                                    
+                                        </div>       
                                     </form>
                                 </div>
-                                <div class="modal-footer d-flex justify-content-between">
+                                <div class="modal-footer d-flex">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-success" (click)="login()">Submit</button>
+                                    <!-- <button class="btn btn-close"></button> -->
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <button class="px-4 py-2 btn btn-primary">SIGN UP</button>
+                    <!-- SIGN UP Button trigger modal -->
+                    <!-- <button type="button" class="px-4 py-2 btn btn-primary me-4" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop2">
+                        SIGN UP
+                    </button> -->
+
+                    <!-- <div class="modal fade shadow" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">SIGN UP</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form autocomplete="off" class="p-2" #ngForm>
+                                        <div class="form-group mt-3" data-aos="zoom-in">
+                                            <label for="emailAddress" class="font-weight-bold">UserName</label>
+                                            <input type="text" class="form-control border w-100 p-1" 
+                                            ngModel="user" autofocus />
+                                        </div>
+                                        <div class="form-group mt-3" data-aos="zoom-in">
+                                            <label for="password" class="font-weight-bold">Password</label>
+                                            <input type="password" class="form-control border w-100 p-1"
+                                            ngModel="pass"/>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer d-flex">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success">Submit</button>
+                                    <button class="btn btn-close"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </section>
             </div>
         </div>

@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, NgForm, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html'
+  templateUrl: './navbar.component.html',
+  providers: [JwtHelperService]
 })
 
 export class NavbarComponent {
@@ -18,11 +20,13 @@ export class NavbarComponent {
   isStudent: boolean = false;
   isTeacher: boolean = false;
   invalidLogin!: boolean;
+  user: string = "";
+  pass: string = "";
   // adminDetails!: AdminDetails[];
   // studentDetails!: Student[];
   // teacherDetails!: Teacher[];
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private fb: FormBuilder ,private router: Router, private http: HttpClient) { }
 
   // constructor(private router: Router, private appService: AppServiceService, private studentService: StudentService, private employeeService: TeacherService, private adminService: AdminService,
   //   private attendanceTracker: AttendanceTrackerService) { }
@@ -39,9 +43,12 @@ export class NavbarComponent {
 
   buildForm() {
     this.loginDetailsForm = new FormGroup({
-      id: new FormControl(''),
-      userName: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required])
+      id: new FormControl('', [Validators.required]),
+      userName: new FormControl('',
+        [Validators.required, Validators.maxLength(15)]),
+      password: new FormControl('',
+        [Validators.required, Validators.maxLength(15)]),
+      hobbies: new FormArray([])
     });
   }
 
@@ -126,5 +133,12 @@ export class NavbarComponent {
   get password() {
     return this.loginDetailsForm.get('password');
   }
+
+  signUp(form: NgForm) {
+    var credentials = {
+
+    }
+  }
+
 }
 
