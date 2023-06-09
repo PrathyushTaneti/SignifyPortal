@@ -22,17 +22,17 @@ namespace server.Controllers
 
 
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<List<Admin>>> GetAllAdmins([FromServices] DataContext dataContext)
         {
             try
             {
-                throw new ArgumentOutOfRangeException();
+                //throw new ArgumentOutOfRangeException();
                 return await this.mediator.Send(new GetAdminDetailsQuery());
             }
             catch (Exception e) when (dataContext is null)
             {
-                throw ;
+                throw e;
             }
         }
 

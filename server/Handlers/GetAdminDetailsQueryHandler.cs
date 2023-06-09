@@ -13,6 +13,7 @@ namespace server.Handlers
         {
             this.context = context;
         }
+
         public async Task<List<Admin>> Handle(GetAdminDetailsQuery request, CancellationToken cancellationToken)
         {
             return await this.context.Admins.ToListAsync();
