@@ -6,14 +6,11 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  styleUrls : ['./home.component.scss']
 })
 
 export class HomeComponent {
-  color : string = "red"
-  red: any;
-  green: any;
-
   public readingIcon = "../../assets/images/hero-image.svg";
   public loginForm!: FormGroup;
 

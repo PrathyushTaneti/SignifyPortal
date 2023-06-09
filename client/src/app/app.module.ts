@@ -18,50 +18,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthGuardService } from './services/auth-guard.service';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { AppRouting } from './modules/app-routing.module';
 
 export function isAuthenticated() {
   return localStorage.getItem("jwt");
 }
 
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: NavbarComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
-      {
-        path: 'home',
-        component: HomeComponent
-      }
-    ]
-  },
-  {
-    path: 'admin/:id/:name',
-    component: AdminComponent,
-    canActivate: [AuthGuardService],
-    children: [
-      {
-        path: '',
-        redirectTo: 'student-details',
-        pathMatch: 'full'
-      },
-      {
-        path: 'student-details',
-        component: StudentDetailsComponent,
-        canActivateChild: [AuthGuardService]
-      }
-    ]
-  }
-];
+
 
 const components = [
   AppComponent,
@@ -73,11 +36,10 @@ const components = [
 @NgModule({
   declarations: [
     components,
-    StudentDetailsComponent
+    StudentDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -92,7 +54,9 @@ const components = [
         disallowedRoutes: []
       }
     }),
-    FormsModule
+    FormsModule,
+    AppRouting
+
   ],
   providers: [],
   bootstrap: [AppComponent],

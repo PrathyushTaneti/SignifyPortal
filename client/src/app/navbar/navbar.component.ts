@@ -7,6 +7,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
   providers: [JwtHelperService]
 })
 
@@ -26,7 +27,7 @@ export class NavbarComponent {
   // studentDetails!: Student[];
   // teacherDetails!: Teacher[];
 
-  constructor(private fb: FormBuilder ,private router: Router, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient) { }
 
   // constructor(private router: Router, private appService: AppServiceService, private studentService: StudentService, private employeeService: TeacherService, private adminService: AdminService,
   //   private attendanceTracker: AttendanceTrackerService) { }

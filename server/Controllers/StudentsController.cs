@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Signify.Models;
 using server.Data;
+using server.Utility.ApiRoute;
 
 namespace server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route(IGetApiRoute.DefaultRoute)]
     [ApiController]
     public class StudentsController : ControllerBase
     {
@@ -43,7 +44,6 @@ namespace server.Controllers
           }
             _context.Students.Add(student);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetStudent", new { id = student.Id }, student);
         }
 
@@ -59,10 +59,8 @@ namespace server.Controllers
             {
                 return NotFound();
             }
-
             _context.Students.Remove(student);
             await _context.SaveChangesAsync();
-
             return NoContent();
         }
 

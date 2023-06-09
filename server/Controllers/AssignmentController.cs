@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using server.Data;
+using server.Utility.ApiRoute;
 
 namespace server.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route(IGetApiRoute.DefaultRoute)]
     [ApiController]
     public class AssignmentController : ControllerBase
     {

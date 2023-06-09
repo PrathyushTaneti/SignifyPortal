@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using server.Utility.ApiRoute;
 using System.Text;
 
 namespace server.Configuration
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddAuthenticationDP(this IServiceCollection services)
+        public static IServiceCollection AddAuthenticationDP(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAuthentication(options =>
             {
@@ -23,10 +24,9 @@ namespace server.Configuration
 
                     ValidIssuer = "https://localhost:7100",
                     ValidAudience = "https://localhost:7100",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("AbdulRahman@786."))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetValue<string>("SecretKey:MySecretKey")))
                 };
             });
-
             return services;
         }
 
@@ -54,6 +54,12 @@ namespace server.Configuration
                 });
             });
 
+            return services;
+        }
+
+        public static IServiceCollection AddServicesUtil(this IServiceCollection services)
+        {
+            services.AddScoped<IGetApiRoute, GetApiRoute>();
             return services;
         }
     }

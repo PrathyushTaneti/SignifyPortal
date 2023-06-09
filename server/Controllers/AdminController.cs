@@ -1,25 +1,34 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using server.Data;
+using server.Queries;
+using server.Utility.ApiRoute;
 using System.Data;
 using System.Linq.Expressions;
 using System.Net;
 
 namespace server.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route(IGetApiRoute.DefaultRoute)]
     [ApiController]
     public class AdminController : ControllerBase
     {
+        private readonly IMediator mediator;
+
+        public AdminController(IMediator mediator) => this.mediator = mediator;
+
+
         [HttpGet]
-       // [Authorize]
-        public ActionResult<List<Admin>> GetAllAdmins([FromServices] DataContext dataContext)
+        [Authorize]
+        public async Task<ActionResult<List<Admin>>> GetAllAdmins([FromServices] DataContext dataContext)
         {
             try
             {
-                return dataContext.Admins.ToList();
+                throw new ArgumentOutOfRangeException();
+                return await this.mediator.Send(new GetAdminDetailsQuery());
             }
             catch (Exception e) when (dataContext is null)
             {

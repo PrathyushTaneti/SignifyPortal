@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Signify.Models;
 using server.Data;
+using server.Utility.ApiRoute;
 
 namespace server.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route(IGetApiRoute.DefaultRoute)]
     [ApiController]
     public class AttendanceController : ControllerBase
     {

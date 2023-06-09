@@ -9,6 +9,8 @@
   <ItemGroup>
     <PackageReference Include="automapper" Version="12.0.1" />
     <PackageReference Include="automapper.extensions.microsoft.dependencyinjection" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="MediatR.extensions.microsoft.dependencyinjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
     <PackageReference Include="microsoft.entityframeworkcore" Version="7.0.5" />
@@ -27,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Commands\" />
   </ItemGroup>
 
 </Project>

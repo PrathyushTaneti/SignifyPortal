@@ -2,13 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using server.Models;
+using server.Utility.ApiRoute;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 namespace server.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route(IGetApiRoute.DefaultRoute)]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -37,7 +38,7 @@ namespace server.Controllers
                         issuer: "https://localhost:7100",
                         audience: "https://localhost:7100",
                         claims: claims,
-                        expires: DateTime.Now.AddMinutes(60),
+                        expires: DateTime.Now.AddMinutes(10),
                         signingCredentials : signinCredentials
                     );
                     var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
