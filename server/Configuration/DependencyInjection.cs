@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.IdentityModel.Tokens;
+using server.Utility.ApiResponse;
 using server.Utility.ApiRoute;
 using System.Text;
 
@@ -57,9 +59,17 @@ namespace server.Configuration
             return services;
         }
 
+
         public static IServiceCollection AddServicesUtil(this IServiceCollection services)
         {
             services.AddScoped<IGetApiRoute, GetApiRoute>();
+            return services;
+        }
+
+
+        public static IServiceCollection InjectDependenciesUtil(this IServiceCollection services)
+        {
+            services.AddScoped<IResponse, Response>();
             return services;
         }
     }

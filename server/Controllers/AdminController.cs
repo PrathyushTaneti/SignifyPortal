@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using server.Data;
 using server.Queries;
+using server.Utility.ApiResponse;
 using server.Utility.ApiRoute;
 using System.Data;
 using System.Linq.Expressions;
@@ -23,7 +24,7 @@ namespace server.Controllers
 
         [HttpGet]
         //[Authorize]
-        public async Task<ActionResult<List<Admin>>> GetAllAdmins([FromServices] DataContext dataContext)
+        public async Task<ReturnResponse> GetAllAdmins([FromServices] DataContext dataContext)
         {
             try
             {

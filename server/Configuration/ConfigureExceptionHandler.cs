@@ -11,6 +11,7 @@ namespace server.Configuration
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseDeveloperExceptionPage();
             }
             else
             {

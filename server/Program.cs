@@ -27,6 +27,7 @@ public class Program {
                 .AddSwaggerGen()
                 .AddControllers();
 
+
             builder.Services
                 .AddAuthenticationDP(builder.Configuration)
                 .AddDbContextUtil(builder.Configuration)
