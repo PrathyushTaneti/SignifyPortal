@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+using server.CustomFilters;
 using server.Data;
 using server.Queries;
 using server.Utility.ApiResponse;
@@ -17,6 +18,8 @@ namespace server.Controllers
 {
     [ApiController]
     [Route(GetApiRoute.DefaultRoute)]
+    [MySampleAsyncActionFilterAttribute("Controller Level", 5)]
+    //MySampleFilterAttribute("Abdul Rahman")]
     public class AdminController : ControllerBase
     {
         private readonly IMediator mediator;
@@ -26,6 +29,7 @@ namespace server.Controllers
 
 
         [HttpGet("get.{format}"), FormatFilter]
+        [MySampleAsyncActionFilterAttribute("Method Level", 4)]
         //[HttpGet]
         //[Authorize]
         public async Task<List<Admin>> GetAllAdmins()
@@ -34,7 +38,7 @@ namespace server.Controllers
             {
                 return await this.mediator.Send(new GetAdminDetailsQuery());
             }
-            catch (Exception e) 
+            catch (Exception e)     
             {
                 throw e;
             }

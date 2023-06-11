@@ -14,6 +14,7 @@ using Microsoft.Identity.Client;
 using System.Net;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Diagnostics;
+using server.CustomFilters;
 
 public class Program {
        public static void Main(String[] args)
@@ -25,7 +26,11 @@ public class Program {
                 .AddAutoMapper(typeof(Program).Assembly)
                 .AddEndpointsApiExplorer()
                 .AddSwaggerGen()
-                .AddControllers(options => options.RespectBrowserAcceptHeader = true)
+                .AddControllers(options =>
+                {
+                    options.RespectBrowserAcceptHeader = true;
+                    options.Filters.Add(new MySampleFilterAttribute("Global Level", 11));
+                })
                 .AddXmlSerializerFormatters()
                 .AddXmlDataContractSerializerFormatters();
 
