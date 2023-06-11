@@ -23,7 +23,7 @@ namespace server.Configuration
                         options.Run(
                             async context =>
                             {
-                                context.Response.StatusCode = (int)(HttpStatusCode.InternalServerError);
+                                //context.Response.StatusCode = (int)(HttpStatusCode.InternalServerError);
                                 var ex = context.Features.Get<IExceptionHandlerFeature>();
                                 if (ex != null)
                                 {

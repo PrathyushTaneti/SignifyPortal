@@ -5,7 +5,7 @@ using server.Utility.ApiRoute;
 
 namespace server.Controllers
 {
-    [Route(IGetApiRoute.DefaultRoute)]
+    [Route(GetApiRoute.DefaultRoute)]
     [ApiController]
     public class AssignmentController : ControllerBase
     {

@@ -62,7 +62,8 @@ namespace server.Configuration
 
         public static IServiceCollection AddServicesUtil(this IServiceCollection services)
         {
-            services.AddScoped<IGetApiRoute, GetApiRoute>();
+            //services.AddScoped<IGetApiRoute, GetApiRoute>();
+            //.AddXmlDataContractSerializerFormatters();
             return services;
         }
 

@@ -25,7 +25,9 @@ public class Program {
                 .AddAutoMapper(typeof(Program).Assembly)
                 .AddEndpointsApiExplorer()
                 .AddSwaggerGen()
-                .AddControllers();
+                .AddControllers(options => options.RespectBrowserAcceptHeader = true)
+                .AddXmlSerializerFormatters()
+                .AddXmlDataContractSerializerFormatters();
 
 
             builder.Services
@@ -33,6 +35,7 @@ public class Program {
                 .AddDbContextUtil(builder.Configuration)
                 .AddCorsUtil()
                 .AddServicesUtil();
+
 
             builder.Services.AddMediatR(typeof(Program));
 

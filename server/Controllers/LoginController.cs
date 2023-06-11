@@ -9,7 +9,7 @@ using System.Text;
 
 namespace server.Controllers
 {
-    [Route(IGetApiRoute.DefaultRoute)]
+    [Route(GetApiRoute.DefaultRoute)]
     [ApiController]
     public class LoginController : ControllerBase
     {

@@ -4,6 +4,6 @@ using Signify.Models;
 
 namespace server.Queries
 {
-    public record GetAdminDetailsQuery : IRequest<ReturnResponse>;
+    public record GetAdminDetailsQuery : IRequest<List<Admin>>;
    
 }
