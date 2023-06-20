@@ -21,18 +21,19 @@ public class Program {
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services
-                .AddAutoMapper(typeof(Program).Assembly)
-                .AddEndpointsApiExplorer()
-                .AddSwaggerGen()
-                .AddControllers(options =>
-                {
-                    options.RespectBrowserAcceptHeader = true;
-                    options.Filters.Add(new MySampleFilterAttribute("Global Level", 11));
-                })
-                .AddXmlSerializerFormatters()
-                .AddXmlDataContractSerializerFormatters();
+        // Add services to the container.
+        builder.Services
+            .AddAutoMapper(typeof(Program).Assembly)
+            .AddEndpointsApiExplorer()
+            .AddSwaggerGen()
+            .AddResponseCaching(x => x.MaximumBodySize = 1024)
+            .AddControllers(options =>
+            {
+                options.RespectBrowserAcceptHeader = true;
+                options.Filters.Add(new MySampleFilterAttribute("Global Level", 11));
+            })
+            .AddXmlSerializerFormatters()
+            .AddXmlDataContractSerializerFormatters();
 
 
             builder.Services
@@ -49,7 +50,22 @@ public class Program {
         //Configure the HTTP request pipeline.
             app.ConfigureExceptions();
 
-            app.UseCors("EnableCORS");
+            app.UseCors("EnableCORS"); 
+
+
+            /* Response Caching should always be after the use cors middleware and it only works for
+             http get methods */
+            app.Use(async (context, next) =>
+            {
+                context.Response.GetTypedHeaders().CacheControl =
+                    new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
+                    {
+                        Public = true,
+                        MaxAge = TimeSpan.FromSeconds(10) 
+                    };
+                context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] = new string[] {"Accept-Encoding"};
+                await next();
+            });
 
             app.UseHttpsRedirection();
 

@@ -5,6 +5,17 @@
 }
 
 
+// global classes
+.font-weight-bold {
+    font-weight: bold;
+    color: #000; 
+}
+
+
+
+
+
+// media queries
 @media screen and (max-width : 900px) {
     html {
         font-size: 10%;
