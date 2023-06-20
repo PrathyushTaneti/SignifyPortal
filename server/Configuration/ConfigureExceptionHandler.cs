@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
+using NLog;
 using System.Net;
 
 namespace server.Configuration
@@ -7,6 +8,9 @@ namespace server.Configuration
     {
         public static void ConfigureExceptions(this WebApplication app)
         {
+            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

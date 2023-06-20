@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.IdentityModel.Tokens;
 using server.Utility.ApiResponse;
 using server.Utility.ApiRoute;
+using server.Utility.Logger;
 using System.Text;
 
 namespace server.Configuration
@@ -64,6 +65,7 @@ namespace server.Configuration
         {
             //services.AddScoped<IGetApiRoute, GetApiRoute>();
             //.AddXmlDataContractSerializerFormatters();
+            services.AddScoped<ILoggerManager, LoggerManager>();
             return services;
         }
 
